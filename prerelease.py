@@ -43,7 +43,7 @@ print('')
 print('Dates Available')
 for i in range (0,5):
     availabledates = date.today() + timedelta(days=i)
-    print(availabledates)
+    print('Option',i+1,'-',availabledates)
 
 daytries = 0
 print('')
@@ -60,6 +60,10 @@ while daytries == 0:
     else:
         print ('You have input an invalid amount of days')
 
+discount = 0   
+discountcount = 0     
+count = 0
+value = 0
 totalcosttries = 0
 while totalcosttries == 0:
     totalcost = 0
@@ -72,20 +76,33 @@ while totalcosttries == 0:
             ainput = int(input('Pick an option '))
             if ainput == 1:
                 totalcost = totalcost + onedayprice[ainput]
+                discount = discount + onedayprice[ainput]
+                discountcount = discountcount + 15
+                count = count + 1
+                value = value + 2                                    #value of 2 - adult & senior, 1 - child 
             if ainput == 2:
                 totalcost = totalcost + onedayprice[ainput]
+                discount = discount + onedayprice[ainput]
+                discountcount = discountcount + 15
+                count = count + 1
+                value = value + 1
             if ainput == 3:
                 totalcost = totalcost + onedayprice[ainput]
+                discount = discount + onedayprice[ainput]
+                discountcount = discountcount + 15
+                count = count + 1
+                value = value + 2
             if ainput == 4:
                 totalcost = totalcost + onedayprice[ainput]
+                discount = discount + onedayprice[ainput]
             if ainput == 5:
                 totalcost = totalcost + onedayprice[ainput]
+                discount = discount + onedayprice[ainput]
             if ainput == 0:
                 pricetries = 0
                 break
             elif ainput > 5:
                 print('Invalid Input')
-                break
         extracost()
         breakline()    
         while pricetries == 0:
@@ -109,10 +126,19 @@ while totalcosttries == 0:
             binput = int(input('Pick an option '))
             if binput == 1:
                 totalcost = totalcost + twodayprice[binput]
+                discountcount = discountcount + 22.5
+                count = count + 1
+                value = value + 2           
             if binput == 2:
                 totalcost = totalcost + twodayprice[binput]
+                discountcount = discountcount + 22.5
+                count = count + 1
+                value = value + 1           
             if binput == 3:
                 totalcost = totalcost + twodayprice[binput]
+                discountcount = discountcount + 22.5 
+                count = count + 1
+                value = value + 2           
             if binput == 4:
                 totalcost = totalcost + twodayprice[binput]
             if binput == 5:
@@ -122,8 +148,6 @@ while totalcosttries == 0:
                 break
             elif binput > 5:
                 print('Invalid Input')
-                break
-            print(totalcost)
         extracost()
         breakline()    
         while pricetries == 0:
@@ -143,10 +167,38 @@ while totalcosttries == 0:
     else:
         print('Invalid Input')
 
+dayonesix = 0
+daytwosix = 0
+#Task 3 Body
+if days == 1:
+    if count == 5 and value == 7:
+        totalcost = totalcost - discount
+        totalcost = totalcost + 60
+        print('Your inputs are eligible for a One Day family ticket which is $60.00.')
+    elif count >= 6:
+        dayonesix = count * 15
+        totalcost = totalcost - discount 
+        totalcost = totalcost + dayonesix
+        print('Your inputs are eligble for a Group of six ticket with $15 per person.')
+ 
+elif days == 2:
+    if count == 5 and value == 7:
+        totalcost = totalcost - discount
+        totalcost = totalcost + 90
+        print('Your inputs are eligible for a Two Day family ticket which is $60.00.')
+    elif count >= 6:
+        dayonesix = count * 22.50
+        totalcost = totalcost - discount 
+        totalcost = totalcost + dayonesix
+        print('Your inputs are eligble for a Group of six ticket with $22.50 per person.')
+ 
+        
+#final       
 bookingletter = "x"
 if days == 1:
     dayoneletter = bookingletter = "A"
 elif days == 2:
     dayoneletter = bookingletter = "B"
 print("Your booking number is", bookingletter + str(random.randrange(1, 100000, 5)))
-print("Your total cost is $", totalcost)
+print("Your total cost with the cheapeast possible tickets is $", totalcost)
+

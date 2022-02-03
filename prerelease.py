@@ -62,8 +62,7 @@ while daytries == 0:
         daytries = daytries + 1
     else:
         print ('You have input an invalid amount of days')
-        
-discount = 0          #counts how much should removed if a discount is applicable
+
 discountcount = 0     #counts how much should be replaced if a discount is applied
 count = 0     #counts how many tickets
 value = 0     #weighs each ticket for task 3
@@ -80,28 +79,23 @@ while totalcosttries == 0:      #loops repeats until totalcosttries reaches 1
             ainput = int(input('Pick an option '))
             if ainput == 1:
                 totalcost = totalcost + onedayprice[ainput]         #onedayprice refers to the array, see array notes
-                discount = discount + onedayprice[ainput]
                 discountcount = discountcount + 15
                 count = count + 1
                 value = value + 2
             if ainput == 2:
                 totalcost = totalcost + onedayprice[ainput]
-                discount = discount + onedayprice[ainput]
                 discountcount = discountcount + 15
                 count = count + 1
                 value = value + 1
             if ainput == 3:
                 totalcost = totalcost + onedayprice[ainput]
-                discount = discount + onedayprice[ainput]
                 discountcount = discountcount + 15
                 count = count + 1
                 value = value + 2
             if ainput == 4:
                 totalcost = totalcost + onedayprice[ainput]
-                discount = discount + onedayprice[ainput]
             if ainput == 5:
                 totalcost = totalcost + onedayprice[ainput]
-                discount = discount + onedayprice[ainput]
             if ainput == 0:             #see array notes, no value added
                 pricetries = 0          #for consistency
                 break

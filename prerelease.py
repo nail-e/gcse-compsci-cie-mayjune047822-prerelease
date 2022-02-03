@@ -47,7 +47,6 @@ for i in range (0,5):
     print('Option',i+1,'-',availabledates)
 
 #Task 2 Body
-
 daytries = 0
 print('')
 print('Booking')

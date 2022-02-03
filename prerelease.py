@@ -2,7 +2,7 @@ from datetime import date, timedelta    #used for days for booking
 import random                           #used for booking number
 
 onedayprice = [0.00, 20.00, 12.00, 16.00, 60.00, 15.00]     #array first value is 0.00 due as first value seen in an array is value 0 while second value seen is value 1 
-twodayprice = [0.00, 30.00, 18.00, 24.00, 90.00, 22.50]     #test
+twodayprice = [0.00, 30.00, 18.00, 24.00, 90.00, 22.50] 
 extraprice = [0.00, 2.50, 2.00, 5.00]
 
 #Task 1

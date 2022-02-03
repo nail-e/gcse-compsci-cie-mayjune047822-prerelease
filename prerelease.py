@@ -176,7 +176,7 @@ if days == 1:
         totalcost = totalcost + discountcount
         print('Your inputs are eligble for a Group of six ticket with $15 per person.')
     else:
-        print('')
+        print('You are not eligible for any discount.')
 elif days == 2:
     if count == 5 and value == 7:
         totalcost = totalcost - totalcost
@@ -187,7 +187,7 @@ elif days == 2:
         totalcost = totalcost + discountcount
         print('Your inputs are eligble for a Group of six ticket with $22.50 per person.')
     else:
-        print('You are not eligble for any discount')
+        print('You are not eligible for any discount.')
         
 #final output       
 bookingletter = "x"

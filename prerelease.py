@@ -177,7 +177,6 @@ if days == 1:
         print('Your inputs are eligble for a Group of six ticket with $15 per person.')
     else:
         print('')
- 
 elif days == 2:
     if count == 5 and value == 7:
         totalcost = totalcost - totalcost

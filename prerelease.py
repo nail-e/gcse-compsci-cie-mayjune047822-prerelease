@@ -77,24 +77,24 @@ while totalcosttries == 0:      #loops repeats until totalcosttries reaches 1
         while pricetries == 0:
             ainput = int(input('Pick an option '))
             if ainput == 1:
-                totalcost = totalcost + onedayprice[ainput]         #onedayprice refers to the array, see array notes
-                discountcount = discountcount + 15
-                count = count + 1
-                value = value + 2
+                totalcost += onedayprice[ainput]         #onedayprice refers to the array, see array notes
+                discountcount += 15
+                count += 1
+                value += 2
             if ainput == 2:
-                totalcost = totalcost + onedayprice[ainput]
-                discountcount = discountcount + 15
-                count = count + 1
-                value = value + 1
+                totalcost += onedayprice[ainput]
+                discountcount += 15
+                count += 1
+                value += 1
             if ainput == 3:
-                totalcost = totalcost + onedayprice[ainput]
-                discountcount = discountcount + 15
-                count = count + 1
-                value = value + 2
+                totalcost += onedayprice[ainput]
+                discountcount += 15
+                count += 1
+                value += 2
             if ainput == 4:
-                totalcost = totalcost + onedayprice[ainput]
+                totalcost += onedayprice[ainput]
             if ainput == 5:
-                totalcost = totalcost + onedayprice[ainput]
+                totalcost += onedayprice[ainput]
             if ainput == 0:             #see array notes, no value added
                 pricetries = 0          #for consistency
                 break
@@ -106,41 +106,41 @@ while totalcosttries == 0:      #loops repeats until totalcosttries reaches 1
         while pricetries == 0:          #new loop for extra costs
             ainputb = int(input('Pick an option '))
             if ainputb == 1:
-                extracost = extracost + extraprice[ainputb]
+                extracost += extraprice[ainputb]
             if ainputb == 2:
-                extracost = extracost + extraprice[ainputb]
+                extracost += extraprice[ainputb]
             if ainputb == 3:
                 print('Option 3 is not available for the one-day')
             if ainputb == 0:
-                pricetries = pricetries + 1
+                pricetries += 1
                 break
             elif ainputb > 5:
                 print('Invalid Input')
-        totalcosttries = totalcosttries + 1         #ends 2nd loop permanently
+        totalcosttries += 1         #ends 2nd loop permanently
     elif days == 2:
         twodaycost()
         breakline()
         while pricetries == 0:
             binput = int(input('Pick an option '))
             if binput == 1:
-                totalcost = totalcost + twodayprice[binput]
-                discountcount = discountcount + 22.5
-                count = count + 1
-                value = value + 2           
+                totalcost += twodayprice[binput]
+                discountcount += 22.5
+                count += 1
+                value += 2           
             if binput == 2:
-                totalcost = totalcost + twodayprice[binput]
-                discountcount = discountcount + 22.5
-                count = count + 1
-                value = value + 1           
+                totalcost += twodayprice[binput]
+                discountcount += 22.5
+                count += 1
+                value += 1           
             if binput == 3:
-                totalcost = totalcost + twodayprice[binput]
-                discountcount = discountcount + 22.5 
-                count = count + 1
-                value = value + 2           
+                totalcost += twodayprice[binput]
+                discountcount += 22.5 
+                count += 1
+                value += 2           
             if binput == 4:
-                totalcost = totalcost + twodayprice[binput]
+                totalcost += twodayprice[binput]
             if binput == 5:
-                totalcost = totalcost + twodayprice[binput]
+                totalcost += twodayprice[binput]
             if binput == 0:
                 pricetries = 0
                 break
@@ -151,40 +151,40 @@ while totalcosttries == 0:      #loops repeats until totalcosttries reaches 1
         while pricetries == 0:
             binputb = int(input('Pick an option '))
             if binputb == 1:
-                extracost = extracost + extraprice[binputb]
+                extracost += extraprice[binputb]
             if binputb == 2:
-                extracost = extracost + extraprice[binputb]
+                extracost += extraprice[binputb]
             if binputb == 3:
-                extracost = extracost + extraprice[binputb]
+                extracost += extraprice[binputb]
             if binputb == 0:
-                pricetries = pricetries + 1
+                pricetries += 1
                 break
             elif binputb > 3:
                 print('Invalid Input')
-        totalcosttries = totalcosttries + 1
+        totalcosttries += 1
     else:
         print('Invalid Input')
 
 #Task 3 Body
 if days == 1:
     if count == 5 and value == 7:
-        totalcost = totalcost - totalcost
-        totalcost = totalcost + 60
+        totalcost -= totalcost
+        totalcost -= 60
         print('Your inputs are eligible for a One Day family ticket which is $60.00.')
     elif count >= 6:
-        totalcost = totalcost - totalcost
-        totalcost = totalcost + discountcount
+        totalcost -= totalcost
+        totalcost -= discountcount
         print('Your inputs are eligble for a Group of six ticket with $15 per person.')
     else:
         print('You are not eligible for any discount.')
 elif days == 2:
     if count == 5 and value == 7:
-        totalcost = totalcost - totalcost
-        totalcost = totalcost + 90
+        totalcost -= totalcost
+        totalcost += 90
         print('Your inputs are eligible for a Two Day family ticket which is $90.00.')
     elif count >= 6:
-        totalcost = totalcost - totalcost
-        totalcost = totalcost + discountcount
+        totalcost -= totalcost
+        totalcost += discountcount
         print('Your inputs are eligble for a Group of six ticket with $22.50 per person.')
     else:
         print('You are not eligible for any discount.')
